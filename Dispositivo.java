@@ -274,23 +274,71 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public boolean cambiarFMAM(){
-        return false;
+        radio.setBanda("AM");
+        return true;
     }
 
     public float cambiarEmisora(){
-        return 0;
+        llenarDispositivo();
+
+        int i = 0;
+        float nuevaEmisora = 0;
+
+        while(i < emisoras.length){
+            if (emisoras[i] == radio.getEmisora()){
+                if (i == emisoras.length){
+                    i = -1;
+                    nuevaEmisora = emisoras[i+1];
+                }
+                nuevaEmisora = emisoras[i+1];
+
+            }
+            i++;
+        }
+        radio.setEmisora(nuevaEmisora);
+
+        return nuevaEmisora;
     }
 
     public void guardarEmisora(){
-
+        float emisora = radio.getEmisora();
+        emisorasGuardadas.add(emisora);
     }
 
     public String cargarEmisora(){
-        return "";
+        Random carga = new Random();
+        String estacion = "";
+        int i = 0;
+        int indice = 0;
+
+        if (emisorasGuardadas.size() <= 0){
+            estacion = "No se puede cargar ninguna emisora, ya que no hay emisoras guardadas";
+        } else {
+            float emisoraCarga = carga.nextInt(0,emisorasGuardadas.size());
+            radio.setEmisora(emisoraCarga);
+        }
+
+        while(i < emisoras.length){
+            if (emisoras[i] == radio.getEmisora()){
+                if (i == emisoras.length){
+                    i = 0;
+                    indice = i;
+                }
+                indice = i;
+
+            }
+            i++;
+        }
+
+        estacion = "\nBanda: " + radio.getBanda() + "\nEmisora: " + emisorasNombre[indice] + "\nFrecuencia: " + radio.getEmisora();
+        
+        return estacion;
     }
 
     public String seleccionarLista(int num){
-        return "";
+        String[] lista = temas.getListaReprod();
+        String listaEscogida = lista[num];
+        return "Has decidido escuchar la playlist: " + listaEscogida;
     }
 
     public String cambiarCancion(){

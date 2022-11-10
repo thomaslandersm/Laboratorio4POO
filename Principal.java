@@ -29,36 +29,77 @@ public class Principal{
 
                             switch (elegir) {
                                 case 1:
+
+                                    System.out.println("¿Que banda elige? FM/AM");
+                                    rpa = teclado.nextLine();
+                                    boolean fm = rpa.equalsIgnoreCase("FM");
+                                    boolean am = rpa.equalsIgnoreCase("AM");
+                                    if (fm == false && am == false ){
+                                        System.out.println("Ese tipo de banda no esta disponible");
+                                    } else {
+
                                     while (modos) {
-                                        System.out.println("\n1. AM/FM\n2. Cambiar de emisora\n3. Guardar Emisora\n4. Cargar emisora\n5. Cambiar volukmen\n6. Cambiar modalidad\n");
+                                        if (rpa.equalsIgnoreCase("FM")){
+                                            System.out.println("\n1. Cambiar de emisora\n2. Guardar Emisora\n3. Cargar emisora\n4. Cambiar volukmen\n5. Cambiar modalidad\n");
 
-                                        try {
-                                            elegir = teclado.nextInt();
-                                            teclado.nextLine();
+                                            try {
+                                                elegir = teclado.nextInt();
+                                                teclado.nextLine();
 
-                                            switch (elegir) {
-                                                case 1:
-                                                    
-                                                    break;
-                                            
-                                                case 2:
-                                                    break;
-                                                case 3:
-                                                    break;
-                                                case 4:
-                                                    break;
-                                                case 5:
-                                                    int nuevoVolumen = radioA.cambiarVolumen();
-                                                    System.out.println("Se cambio el volumen a " + nuevoVolumen);
-                                                    break;
-                                                case 6:
-                                                    modos = false;
-                                                    break;
+                                                switch (elegir) {
+                                                    case 1:
+                                                        float cambioEmisora = radioA.cambiarEmisora();
+                                                        System.out.println("Ahora se esta escuchando la emisora: " + cambioEmisora);
+                                                        break;
+                                                    case 2:
+                                                        System.out.println("Emisora guardada");
+                                                        radioA.guardarEmisora();
+                                                        break;
+                                                    case 3:
+                                                        System.out.println(radioA.cargarEmisora());
+                                                        break;
+                                                    case 4:
+                                                        int nuevoVolumen = radioA.cambiarVolumen();
+                                                        System.out.println("Se cambio el volumen a " + nuevoVolumen);
+                                                        break;
+                                                    case 5:
+                                                        modos = false;
+                                                        break;
+                                                }
+                                            } catch (Exception e) {
+                                                teclado.nextLine();
+                                                System.out.println("\nEsa opción no es válida para esta modalidad");
                                             }
-                                        } catch (Exception e) {
-                                            teclado.nextLine();
-                                            System.out.println("\nEsa opción no es válida para esta modalidad");
+
+                                        } else if (rpa.equalsIgnoreCase("AM")){
+                                            radioA.cambiarFMAM();
+                                            System.out.println("\n1. Cambiar de emisora\n2. Guardar Emisora\n3. Cargar emisora\n4. Cambiar volukmen\n5. Cambiar modalidad\n");
+
+                                            try {
+                                                elegir = teclado.nextInt();
+                                                teclado.nextLine();
+
+                                                switch (elegir) {
+                                                    case 1:
+                                                        break;
+                                                    case 2:
+                                                        break;
+                                                    case 3:
+                                                        break;
+                                                    case 4:
+                                                        int nuevoVolumen = radioA.cambiarVolumen();
+                                                        System.out.println("Se cambio el volumen a " + nuevoVolumen);
+                                                        break;
+                                                    case 5:
+                                                        modos = false;
+                                                        break;
+                                                }
+                                            } catch (Exception e) {
+                                                teclado.nextLine();
+                                                System.out.println("\nEsa opción no es válida para esta modalidad");
+                                            }
                                         }
+                                    }
                                     }
                                     
                                     break;
@@ -73,7 +114,16 @@ public class Principal{
 
                                             switch (elegir) {
                                                 case 1:
-                                                    
+                                                    System.out.println("Ingrese un número:");
+                                                    try {
+                                                        int numero = teclado.nextInt();
+                                                        teclado.nextLine();
+
+                                                        radioA.seleccionarLista(numero);
+                                                    } catch (Exception e) {
+                                                        teclado.nextLine();
+                                                        System.out.println("El número ingresado es invalido");
+                                                    }
                                                     break;
                                             
                                                 case 2:
@@ -87,17 +137,6 @@ public class Principal{
                                                 case 4:
                                                     int nuevoVolumen = radioA.cambiarVolumen();
                                                     System.out.println("Se cambio el volumen a " + nuevoVolumen);
-                                                    /*System.out.println("¿A cuánto quiere que este el volumen?");
-                                                    try {
-                                                        int volumen = teclado.nextInt();
-                                                        teclado.nextLine();
-                                                        radioA.cambiarVolumen();
-
-                                                        System.out.println("El volumen actual es de " + volumen);
-                                                    } catch (Exception e) {
-                                                        teclado.nextInt();
-                                                        System.out.println("Valor incorrecto para el volumen");
-                                                    }*/
                                                     break;
                                                 case 5:
                                                     modos = false;

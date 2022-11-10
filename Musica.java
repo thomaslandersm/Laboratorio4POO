@@ -155,5 +155,8 @@ public class Musica {
         autores[19] = "Kana-Boon";
         generos[19] = "J-Rock";
         
+        listaReprod[0] = "Musica Relajante";
+        listaReprod[1] = "La depresion";
+        listaReprod[2] = "Party Hard";
     }
 }

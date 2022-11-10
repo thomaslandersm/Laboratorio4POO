@@ -2,13 +2,23 @@ public class Radio {
     private String banda;
     private int volumen;
     private boolean encendido;
+    private float emisora;
 
     public Radio(){
-        banda = "";
+        banda = "FM";
         volumen = 75;
         encendido = false;
+        emisora = (float) 92.5;
     }
 
+
+    public float getEmisora() {
+        return this.emisora;
+    }
+
+    public void setEmisora(float emisora) {
+        this.emisora = emisora;
+    }
 
     public String getBanda() {
         return this.banda;
