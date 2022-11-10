@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRadio,ModoReproduccion{
     private Radio radio;
@@ -223,7 +224,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public boolean ConectDesconectTelefono(){
-        return false;
+        return true;
     }
 
     public String MostrarContactos(){
@@ -263,7 +264,8 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public int cambiarVolumen(){
-        return 0;
+        int volumen = radio.getVolumen();
+        return volumen;
     }
 
     public boolean cambiarFMAM(){
@@ -287,10 +289,24 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public String cambiarCancion(){
-        return "";
+        Random numCancion = new Random();
+        int eleccion = numCancion.nextInt(0,19);
+        String[] canciones = temas.getCanciones();
+        String[] autores = temas.getAutores();
+        String[] duracion = temas.getDuracion();
+        String[] generos = temas.getGeneros(); 
+
+        String cancionElegida = "Ahora esta escuchando:\n\n" + canciones[eleccion] +"\n"+ autores[eleccion] +"\n"+ generos[eleccion] +"\n"+ duracion[eleccion];
+        return cancionElegida;
     }
 
     public String escucharCancion(){
-        return "";
+        String[] canciones = temas.getCanciones();
+        String[] autores = temas.getAutores();
+        String[] duracion = temas.getDuracion();
+        String[] generos = temas.getGeneros();
+
+        String cancionEscuchar = "Va a escuchar:\n\n" + canciones[0] +"\n"+ autores[0] +"\n"+ generos[0] +"\n"+ duracion[0];
+        return cancionEscuchar;
     }
 }

@@ -7,6 +7,7 @@ public class Principal{
         boolean ejecucion = true;
         String rpa = "";
         int elegir = 0;
+        boolean conectividad = false;
 
         Dispositivo radioA = new Dispositivo();
         
@@ -47,6 +48,17 @@ public class Principal{
                                                 case 4:
                                                     break;
                                                 case 5:
+                                                    System.out.println("¿A cuánto quiere que este el volumen?");
+                                                    try {
+                                                        int volumen = teclado.nextInt();
+                                                        teclado.nextLine();
+                                                        radioA.cambiarVolumen();
+
+                                                        System.out.println("El volumen actual es de " + volumen);
+                                                    } catch (Exception e) {
+                                                        teclado.nextInt();
+                                                        System.out.println("Valor incorrecto para el volumen");
+                                                    }
                                                     break;
                                                 case 6:
                                                     modos = false;
@@ -62,7 +74,7 @@ public class Principal{
                             
                                 case 2:
                                     while (modos) {
-                                        System.out.println("\n1. Seleccionar lista de reproducción\n2. Escuchar canción\n3. Cambiar canción\n4. Cambiar volukmen\n5. Cambiar modalidad\n");
+                                        System.out.println("\n1. Seleccionar lista de reproducción\n2. Escuchar canción\n3. Cambiar canción\n4. Cambiar volumen\n5. Cambiar modalidad\n");
                                         
                                         try {
                                             elegir = teclado.nextInt();
@@ -74,10 +86,25 @@ public class Principal{
                                                     break;
                                             
                                                 case 2:
+                                                    String escuchar = radioA.escucharCancion();
+                                                    System.out.println(escuchar);
                                                     break;
                                                 case 3:
+                                                    String cambio = radioA.cambiarCancion();
+                                                    System.out.println(cambio);
                                                     break;
                                                 case 4:
+                                                    System.out.println("¿A cuánto quiere que este el volumen?");
+                                                    try {
+                                                        int volumen = teclado.nextInt();
+                                                        teclado.nextLine();
+                                                        radioA.cambiarVolumen();
+
+                                                        System.out.println("El volumen actual es de " + volumen);
+                                                    } catch (Exception e) {
+                                                        teclado.nextInt();
+                                                        System.out.println("Valor incorrecto para el volumen");
+                                                    }
                                                     break;
                                                 case 5:
                                                     modos = false;
@@ -122,8 +149,41 @@ public class Principal{
                                                     }
                                                     break;
                                                 case 4:
+                                                    System.out.println("¿A cuánto quiere que este el volumen?");
+                                                    try {
+                                                        int volumen = teclado.nextInt();
+                                                        teclado.nextLine();
+                                                        radioA.cambiarVolumen();
+
+                                                        System.out.println("El volumen actual es de " + volumen);
+                                                    } catch (Exception e) {
+                                                        teclado.nextInt();
+                                                        System.out.println("Valor incorrecto para el volumen");
+                                                    }
                                                     break;
                                                 case 5:
+                                                    if (conectividad == false){
+                                                        System.out.println("¿Desea conectar su teléfono? si/no\n");
+                                                        String conexion = teclado.nextLine();
+                                                        if (conexion.equalsIgnoreCase("si")){
+                                                            boolean conexiones = radioA.ConectDesconectTelefono();
+                                                            System.out.println("Se conecto el teléfono");
+                                                        } else if (conexion.equalsIgnoreCase("no")){
+                                                            System.out.println("No se conecto el telefono");
+                                                        } else {
+                                                            System.out.println("Esa opción es inválida");
+                                                        }
+                                                    } else {
+                                                        System.out.println("¿Desea desconectar su telédono? si/no");
+                                                        String conexion = teclado.nextLine();
+                                                        if (conexion.equalsIgnoreCase("si")){
+                                                            System.out.println("Se desconecto el teléfono");
+                                                        } else if (conexion.equalsIgnoreCase("no")){
+                                                            System.out.println("No se desconecto el telefono");
+                                                        } else {
+                                                            System.out.println("Esa opción es inválida");
+                                                        }
+                                                    }
                                                     break;
                                                 case 6:
                                                     modos = false;
