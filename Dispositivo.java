@@ -251,7 +251,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public boolean CambiarSpeaker(){
-        return false;
+        return true;
     }
 
     public String PlanificarViajes(String direccion){
