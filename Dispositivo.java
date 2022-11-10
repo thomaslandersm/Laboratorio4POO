@@ -227,15 +227,27 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public String MostrarContactos(){
-        return "";
+        tel.llenarContactos();
+        int i = 0;
+        String telefono = "";
+        String contactos = "";
+        String[] tels = tel.getContactos();
+        String[] nums = tel.getNumeros();
+        for (String contacto : tels) {
+            telefono = contacto + "\nNúmero telefonico: " + nums[i] + "\n";
+            contactos += telefono;     
+            i++;
+        }
+        return contactos;
     }
 
     public String LlamarContactos(String numContacto){
-        return "";
+        String llamada = "Se ha llamado a " + numContacto + ". \nLa plática fue larga y divertida.\n" + FinalizarLlamada();
+        return llamada;
     }
 
     public String FinalizarLlamada(){
-        return "";
+        return "Se ha finalizado la llamada";
     }
 
     public boolean CambiarSpeaker(){

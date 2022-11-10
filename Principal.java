@@ -91,7 +91,7 @@ public class Principal{
                                     break;
                                 case 3:
                                     while (modos) {
-                                        System.out.println("\n1. Mostrar contactos\n2. Llamar contactos\n3. Cambiar salida de audio\n4. Cambiar volukmen\n5. Cambiar modalidad\n");
+                                        System.out.println("\n1. Mostrar contactos\n2. Llamar contactos\n3. Cambiar salida de audio\n4. Cambiar volukmen\n5. Conectar/Desconectar teléfono\n6. Cambiar modalidad\n");
                                         
                                         try {
                                             elegir = teclado.nextInt();
@@ -99,16 +99,23 @@ public class Principal{
 
                                             switch (elegir) {
                                                 case 1:
-                                                    
+                                                    String contactos = radioA.MostrarContactos();
+                                                    System.out.println(contactos);
                                                     break;
                                             
                                                 case 2:
+                                                    System.out.println("Marque el número al que quiere llamar:");
+                                                    String telefono = teclado.nextLine();
+                                                    String llamada = radioA.LlamarContactos(telefono);
+                                                    System.out.println(llamada);
                                                     break;
                                                 case 3:
                                                     break;
                                                 case 4:
                                                     break;
                                                 case 5:
+                                                    break;
+                                                case 6:
                                                     modos = false;
                                                     break;
                                             }
