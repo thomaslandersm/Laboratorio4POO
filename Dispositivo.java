@@ -242,8 +242,8 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return false;
     }
 
-    public String PlanificarViajes(){
-        return "";
+    public String PlanificarViajes(String direccion){
+        return "Se ha creado una ruta hacia " + direccion;
     }
 
     public boolean encenderApagar(){

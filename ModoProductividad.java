@@ -1,3 +1,3 @@
 public interface ModoProductividad {
-    public String PlanificarViajes();
+    public String PlanificarViajes(String direccion);
 }
