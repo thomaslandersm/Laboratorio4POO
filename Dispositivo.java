@@ -264,8 +264,11 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public int cambiarVolumen(){
-        int volumen = radio.getVolumen();
-        return volumen;
+        Random nuevoVolumen = new Random();
+        int volumen = nuevoVolumen.nextInt(0,100);
+        radio.setVolumen(volumen);
+        int newVolumen = radio.getVolumen();
+        return newVolumen;
     }
 
     public boolean cambiarFMAM(){

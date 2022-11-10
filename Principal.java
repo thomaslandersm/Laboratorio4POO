@@ -48,17 +48,8 @@ public class Principal{
                                                 case 4:
                                                     break;
                                                 case 5:
-                                                    System.out.println("¿A cuánto quiere que este el volumen?");
-                                                    try {
-                                                        int volumen = teclado.nextInt();
-                                                        teclado.nextLine();
-                                                        radioA.cambiarVolumen();
-
-                                                        System.out.println("El volumen actual es de " + volumen);
-                                                    } catch (Exception e) {
-                                                        teclado.nextInt();
-                                                        System.out.println("Valor incorrecto para el volumen");
-                                                    }
+                                                    int nuevoVolumen = radioA.cambiarVolumen();
+                                                    System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                     break;
                                                 case 6:
                                                     modos = false;
@@ -94,7 +85,9 @@ public class Principal{
                                                     System.out.println(cambio);
                                                     break;
                                                 case 4:
-                                                    System.out.println("¿A cuánto quiere que este el volumen?");
+                                                    int nuevoVolumen = radioA.cambiarVolumen();
+                                                    System.out.println("Se cambio el volumen a " + nuevoVolumen);
+                                                    /*System.out.println("¿A cuánto quiere que este el volumen?");
                                                     try {
                                                         int volumen = teclado.nextInt();
                                                         teclado.nextLine();
@@ -104,7 +97,7 @@ public class Principal{
                                                     } catch (Exception e) {
                                                         teclado.nextInt();
                                                         System.out.println("Valor incorrecto para el volumen");
-                                                    }
+                                                    }*/
                                                     break;
                                                 case 5:
                                                     modos = false;
@@ -149,17 +142,8 @@ public class Principal{
                                                     }
                                                     break;
                                                 case 4:
-                                                    System.out.println("¿A cuánto quiere que este el volumen?");
-                                                    try {
-                                                        int volumen = teclado.nextInt();
-                                                        teclado.nextLine();
-                                                        radioA.cambiarVolumen();
-
-                                                        System.out.println("El volumen actual es de " + volumen);
-                                                    } catch (Exception e) {
-                                                        teclado.nextInt();
-                                                        System.out.println("Valor incorrecto para el volumen");
-                                                    }
+                                                    int nuevoVolumen = radioA.cambiarVolumen();
+                                                    System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                     break;
                                                 case 5:
                                                     if (conectividad == false){
