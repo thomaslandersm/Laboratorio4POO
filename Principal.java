@@ -4,7 +4,6 @@ public class Principal{
     public static void main(String[] args) {
         
         Scanner teclado = new Scanner(System.in);
-        boolean ejecucion = true;
         String rpa = "";
         int elegir = 0;
         boolean conectividad = false;
@@ -15,6 +14,7 @@ public class Principal{
         rpa = teclado.nextLine();
 
         if (rpa.equalsIgnoreCase("si")){
+                boolean ejecucion = radioA.encenderApagar();
                     System.out.println("Bienvenido al sistema de radio");
                     
                     while (ejecucion){

@@ -260,7 +260,9 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public boolean encenderApagar(){
-        return false;
+        radio.setEncendido(true);
+        boolean estado = radio.getEncendido();
+        return estado;
     }
 
     public int cambiarVolumen(){
