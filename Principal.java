@@ -110,7 +110,11 @@ public class Principal{
                                     }
                                     break;
                                 case 3:
-                                    while (modos) {
+                                    System.out.println("¿Desea conectar su telefono? si/no");
+                                    rpa = teclado.nextLine();
+                                    boolean telefonear = radioA.ConectDesconectTelefono();
+                                    if (rpa.equalsIgnoreCase("si"))
+                                    while (telefonear) {
                                         System.out.println("\n1. Mostrar contactos\n2. Llamar contactos\n3. Cambiar salida de audio\n4. Cambiar volukmen\n5. Conectar/Desconectar teléfono\n6. Cambiar modalidad\n");
                                         
                                         try {
@@ -170,7 +174,7 @@ public class Principal{
                                                     }
                                                     break;
                                                 case 6:
-                                                    modos = false;
+                                                    telefonear = false;
                                                     break;
                                             }
                                         } catch (Exception e) {
