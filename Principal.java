@@ -128,7 +128,10 @@ public class Principal{
 
                                             switch (elegir) {
                                                 case 1:
-                                                    
+                                                    System.out.println("");
+                                                    String direccion = teclado.nextLine();
+                                                    String viaje = radioA.PlanificarViajes(direccion);
+                                                    System.out.println(viaje);
                                                     break;
                                             
                                                 case 2:
