@@ -1,4 +1,4 @@
 public interface RadioA {
     public boolean encenderApagar();
-    public int cambiarVolumen();
+    public int cambiarVolumen(int a);
 }

@@ -59,7 +59,8 @@ public class Principal{
                                                         System.out.println(radioA.cargarEmisora());
                                                         break;
                                                     case 4:
-                                                        int nuevoVolumen = radioA.cambiarVolumen();
+                                                    int a = teclado.nextInt();
+                                                        int nuevoVolumen = radioA.cambiarVolumen(a);
                                                         System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                         break;
                                                     case 5:
@@ -92,7 +93,8 @@ public class Principal{
                                                         System.out.println(radioA.cargarEmisora());
                                                         break;
                                                     case 4:
-                                                        int nuevoVolumen = radioA.cambiarVolumen();
+                                                        int a = teclado.nextInt();
+                                                        int nuevoVolumen = radioA.cambiarVolumen(a);
                                                         System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                         break;
                                                     case 5:
@@ -141,7 +143,8 @@ public class Principal{
                                                     System.out.println(cambio);
                                                     break;
                                                 case 4:
-                                                    int nuevoVolumen = radioA.cambiarVolumen();
+                                                    int a = teclado.nextInt();
+                                                    int nuevoVolumen = radioA.cambiarVolumen(a);
                                                     System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                     break;
                                                 case 5:
@@ -160,7 +163,7 @@ public class Principal{
                                     boolean telefonear = radioA.ConectDesconectTelefono();
                                     if (rpa.equalsIgnoreCase("si"))
                                     while (telefonear) {
-                                        System.out.println("\n1. Mostrar contactos\n2. Llamar contactos\n3. Cambiar salida de audio\n4. Cambiar volukmen\n5. Conectar/Desconectar teléfono\n6. Cambiar modalidad\n");
+                                        System.out.println("\n1. Mostrar contactos\n2. Llamar contactos\n3. Cambiar salida de audio\n4. Cambiar volukmen\n5. Cambiar modalidad\n");
                                         
                                         try {
                                             elegir = teclado.nextInt();
@@ -191,7 +194,8 @@ public class Principal{
                                                     }
                                                     break;
                                                 case 4:
-                                                    int nuevoVolumen = radioA.cambiarVolumen();
+                                                    int a = teclado.nextInt();
+                                                    int nuevoVolumen = radioA.cambiarVolumen(a);
                                                     System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                     break;
                                                 case 5:

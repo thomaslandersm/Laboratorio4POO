@@ -6,7 +6,7 @@ public class Radio {
 
     public Radio(){
         banda = "FM";
-        volumen = 75;
+        volumen = 0;
         encendido = false;
         emisora = (float) 92.5;
     }
