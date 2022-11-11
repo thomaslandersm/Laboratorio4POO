@@ -16,7 +16,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         emisoras = new float[52];
         emisorasGuardadas = new ArrayList<Float>();
         emisorasNombre = new String[52];
-
+  
     }
 
     public Radio getRadio() {
@@ -264,13 +264,18 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         boolean estado = radio.getEncendido();
         return estado;
     }
-
-    public int cambiarVolumen(){
-        Random nuevoVolumen = new Random();
-        int volumen = nuevoVolumen.nextInt(0,100);
-        radio.setVolumen(volumen);
-        int newVolumen = radio.getVolumen();
-        return newVolumen;
+   public int cambiarVolumen(int a){
+        if(estadoRadio){
+            if(a > 0){
+                volumen += a;
+            }
+            else{
+                if(volumen > 0){
+                    volumen += a;
+                }
+            }
+            return volumen;
+        } else return -1;
     }
 
     public boolean cambiarFMAM(){
@@ -368,3 +373,5 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return cancionEscuchar;
     }
 }
+
+
