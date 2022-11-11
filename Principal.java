@@ -59,7 +59,8 @@ public class Principal{
                                                         System.out.println(radioA.cargarEmisora());
                                                         break;
                                                     case 4:
-                                                        int nuevoVolumen = radioA.cambiarVolumen();
+                                                        int a = teclado.nextint();
+                                                        int nuevoVolumen = radioA.cambiarVolumen(a);
                                                         System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                         break;
                                                     case 5:
