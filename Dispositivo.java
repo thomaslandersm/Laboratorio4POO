@@ -1,6 +1,15 @@
+/**
+ * Dispositivo
+ * 
+ * Jose Alejandro Prince Martinez & Thomas Landers Molina
+ * Programación Orientada a Objetos
+ * Laboratorio 4
+ */
 import java.util.ArrayList;
 import java.util.Random;
-
+/**
+ * 
+ */
 public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRadio,ModoReproduccion{
     private Radio radio;
     private Telefono tel;
@@ -9,6 +18,9 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     private ArrayList<Float> emisorasGuardadas;
     private String[] emisorasNombre;
 
+    /**
+ * 
+ */
     public Dispositivo(){
         radio = new Radio();
         tel = new Telefono();
@@ -19,53 +31,105 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
   
     }
 
+    
+    /** 
+     * @return Radio
+     */
     public Radio getRadio() {
         return this.radio;
     }
 
+    
+    /** 
+     * @param radio
+     */
     public void setRadio(Radio radio) {
         this.radio = radio;
     }
 
+    
+    /** 
+     * @return Telefono
+     */
     public Telefono getTel() {
         return this.tel;
     }
 
+    
+    /** 
+     * @param tel
+     */
     public void setTel(Telefono tel) {
         this.tel = tel;
     }
 
+    
+    /** 
+     * @return Musica
+     */
     public Musica getTemas() {
         return this.temas;
     }
 
+    
+    /** 
+     * @param temas
+     */
     public void setTemas(Musica temas) {
         this.temas = temas;
     }
 
+    
+    /** 
+     * @return float[]
+     */
     public float[] getEmisoras() {
         return this.emisoras;
     }
 
+    
+    /** 
+     * @param emisoras
+     */
     public void setEmisoras(float[] emisoras) {
         this.emisoras = emisoras;
     }
 
+    
+    /** 
+     * @return ArrayList<Float>
+     */
     public ArrayList<Float> getEmisorasGuardadas() {
         return this.emisorasGuardadas;
     }
 
+    
+    /** 
+     * @param emisorasGuardadas
+     */
     public void setEmisorasGuardadas(ArrayList<Float> emisorasGuardadas) {
         this.emisorasGuardadas = emisorasGuardadas;
     }
 
+    
+    /** 
+     * @return String[]
+     */
     public String[] getEmisorasNombre() {
         return this.emisorasNombre;
     }
 
+    
+    /** 
+     * @param emisorasNombre
+     */
     public void setEmisorasNombre(String[] emisorasNombre) {
         this.emisorasNombre = emisorasNombre;
     }
+
+/**
+ * 
+ */
 
     public void llenarDispositivo(){
         emisoras[0] = (float) 87.5;
@@ -223,10 +287,21 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     }
 
+    /**
+ * 
+ */
+
+    /** 
+     * @return boolean
+     */
     public boolean ConectDesconectTelefono(){
         return true;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String MostrarContactos(){
         tel.llenarContactos();
         int i = 0;
@@ -242,29 +317,58 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return contactos;
     }
 
+    /**
+ * 
+ */
+
+    /** 
+     * @param numContacto
+     * @return String
+     */
     public String LlamarContactos(String numContacto){
         String llamada = "Se ha llamado a " + numContacto + ". \nLa plática fue larga y divertida.\n" + FinalizarLlamada();
         return llamada;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String FinalizarLlamada(){
         return "Se ha finalizado la llamada";
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean CambiarSpeaker(){
         return true;
     }
 
+    
+    /** 
+     * @param direccion
+     * @return String
+     */
     public String PlanificarViajes(String direccion){
         return "Se ha creado una ruta hacia " + direccion;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean encenderApagar(){
         radio.setEncendido(true);
         boolean estado = radio.getEncendido();
         return estado;
     }
-
+   
+   /** 
+    * @param a
+    * @return int
+    */
    public int cambiarVolumen(int a){
         if(estadoRadio){
             if(a > 0){
@@ -276,13 +380,22 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
                 }
             }
             return volumen;
+        } else return -1;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean cambiarFMAM(){
         radio.setBanda("AM");
         return true;
     }
 
+    
+    /** 
+     * @return float
+     */
     public float cambiarEmisora(){
         llenarDispositivo();
 
@@ -311,6 +424,13 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         emisorasGuardadas.add(emisora);
     }
 
+    /**
+ * 
+ */
+    
+    /** 
+     * @return String
+     */
     public String cargarEmisora(){
         llenarDispositivo();
         Random carga = new Random();
@@ -342,6 +462,14 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return estacion;
     }
 
+    /**
+ * 
+ */
+
+    /** 
+     * @param num
+     * @return String
+     */
     public String seleccionarLista(int num){
         temas.llenarMusica();
         String[] lista = temas.getListaReprod();
@@ -349,6 +477,13 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return "Has decidido escuchar la playlist: " + listaEscogida;
     }
 
+    /**
+ * 
+ */
+    
+    /** 
+     * @return String
+     */
     public String cambiarCancion(){
         temas.llenarMusica();
         Random numCancion = new Random();
@@ -362,6 +497,13 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return cancionElegida;
     }
 
+    /**
+ * 
+ */
+
+    /** 
+     * @return String
+     */
     public String escucharCancion(){
         temas.llenarMusica();
         String[] canciones = temas.getCanciones();

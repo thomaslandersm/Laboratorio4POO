@@ -1,3 +1,14 @@
+/**
+ * Musica
+ * 
+ * Jose Alejandro Prince Martinez & Thomas Landers Molina
+ * Programación Orientada a Objetos
+ * Laboratorio 4
+ */
+
+ /**
+ * 
+ */
 public class Musica {
     private String[] canciones;
     private String[] duracion;
@@ -13,46 +24,92 @@ public class Musica {
         listaReprod = new String[3];
     }
 
-
+/**
+ * 
+ */
+    
+    /** 
+     * @return String[]
+     */
     public String[] getCanciones() {
         return this.canciones;
     }
 
+    
+    /** 
+     * @param canciones
+     */
     public void setCanciones(String[] canciones) {
         this.canciones = canciones;
     }
 
+    
+    /** 
+     * @return String[]
+     */
     public String[] getDuracion() {
         return this.duracion;
     }
 
+    
+    /** 
+     * @param duracion
+     */
     public void setDuracion(String[] duracion) {
         this.duracion = duracion;
     }
 
+    
+    /** 
+     * @return String[]
+     */
     public String[] getAutores() {
         return this.autores;
     }
 
+    
+    /** 
+     * @param autores
+     */
     public void setAutores(String[] autores) {
         this.autores = autores;
     }
 
+    
+    /** 
+     * @return String[]
+     */
     public String[] getGeneros() {
         return this.generos;
     }
 
+    
+    /** 
+     * @param generos
+     */
     public void setGeneros(String[] generos) {
         this.generos = generos;
     }
 
+    
+    /** 
+     * @return String[]
+     */
     public String[] getListaReprod() {
         return this.listaReprod;
     }
 
+    
+    /** 
+     * @param listaReprod
+     */
     public void setListaReprod(String[] listaReprod) {
         this.listaReprod = listaReprod;
     }
+
+/**
+ * 
+ */
 
     public void llenarMusica(){
         canciones[0] = "Imagine";

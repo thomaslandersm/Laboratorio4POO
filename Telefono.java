@@ -1,3 +1,14 @@
+/**
+ * Telefono
+ * 
+ * Jose Alejandro Prince Martinez & Thomas Landers Molina
+ * Programación Orientada a Objetos
+ * Laboratorio 4
+ */
+
+ /**
+ * 
+ */
 public class Telefono {
     private String[] contactos;
     private String[] numeros;
@@ -8,21 +19,41 @@ public class Telefono {
     }
 
 
+    
+    /** 
+     * @return String[]
+     */
     public String[] getContactos() {
         return this.contactos;
     }
 
+    
+    /** 
+     * @param contactos
+     */
     public void setContactos(String[] contactos) {
         this.contactos = contactos;
     }
 
+    
+    /** 
+     * @return String[]
+     */
     public String[] getNumeros() {
         return this.numeros;
     }
 
+    
+    /** 
+     * @param numeros
+     */
     public void setNumeros(String[] numeros) {
         this.numeros = numeros;
     }
+
+/**
+ * 
+ */
 
     public void llenarContactos(){
         contactos[0] = "Papá luchon";
