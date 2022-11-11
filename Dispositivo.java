@@ -284,12 +284,13 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         int i = 0;
         float nuevaEmisora = 0;
 
+        if (radio.getEmisora() == emisoras[50]){
+            nuevaEmisora = emisoras[0];
+            radio.setEmisora(nuevaEmisora);
+        }
+
         while(i < emisoras.length){
             if (emisoras[i] == radio.getEmisora()){
-                if (i == emisoras.length){
-                    i = -1;
-                    nuevaEmisora = emisoras[i+1];
-                }
                 nuevaEmisora = emisoras[i+1];
 
             }
@@ -306,6 +307,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public String cargarEmisora(){
+        llenarDispositivo();
         Random carga = new Random();
         String estacion = "";
         int i = 0;
@@ -314,7 +316,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         if (emisorasGuardadas.size() <= 0){
             estacion = "No se puede cargar ninguna emisora, ya que no hay emisoras guardadas";
         } else {
-            float emisoraCarga = carga.nextInt(0,emisorasGuardadas.size());
+            float emisoraCarga = carga.nextInt(0,emisorasGuardadas.size()-1);
             radio.setEmisora(emisoraCarga);
         }
 
@@ -336,12 +338,14 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     }
 
     public String seleccionarLista(int num){
+        temas.llenarMusica();
         String[] lista = temas.getListaReprod();
         String listaEscogida = lista[num];
         return "Has decidido escuchar la playlist: " + listaEscogida;
     }
 
     public String cambiarCancion(){
+        temas.llenarMusica();
         Random numCancion = new Random();
         int eleccion = numCancion.nextInt(0,19);
         String[] canciones = temas.getCanciones();
@@ -349,17 +353,18 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         String[] duracion = temas.getDuracion();
         String[] generos = temas.getGeneros(); 
 
-        String cancionElegida = "Ahora esta escuchando:\n\n" + canciones[eleccion] +"\n"+ autores[eleccion] +"\n"+ generos[eleccion] +"\n"+ duracion[eleccion];
+        String cancionElegida = "Ahora esta escuchando:\n\nCanción: " + canciones[eleccion] +"\nAutor: "+ autores[eleccion] +"\nGénero: "+ generos[eleccion] +"\nDuración: "+ duracion[eleccion];
         return cancionElegida;
     }
 
     public String escucharCancion(){
+        temas.llenarMusica();
         String[] canciones = temas.getCanciones();
         String[] autores = temas.getAutores();
         String[] duracion = temas.getDuracion();
         String[] generos = temas.getGeneros();
 
-        String cancionEscuchar = "Va a escuchar:\n\n" + canciones[0] +"\n"+ autores[0] +"\n"+ generos[0] +"\n"+ duracion[0];
+        String cancionEscuchar = "Va a escuchar:\n\nCanción: " + canciones[0] +"\nAutor: "+ autores[0] +"\nGénero: "+ generos[0] +"\nDuración: "+ duracion[0];
         return cancionEscuchar;
     }
 }

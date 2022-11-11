@@ -81,10 +81,15 @@ public class Principal{
 
                                                 switch (elegir) {
                                                     case 1:
+                                                        float cambioEmisora = radioA.cambiarEmisora();
+                                                        System.out.println("Ahora se esta escuchando la emisora: " + cambioEmisora);
                                                         break;
                                                     case 2:
+                                                        System.out.println("Emisora guardada");
+                                                        radioA.guardarEmisora();
                                                         break;
                                                     case 3:
+                                                        System.out.println(radioA.cargarEmisora());
                                                         break;
                                                     case 4:
                                                         int nuevoVolumen = radioA.cambiarVolumen();
@@ -119,7 +124,8 @@ public class Principal{
                                                         int numero = teclado.nextInt();
                                                         teclado.nextLine();
 
-                                                        radioA.seleccionarLista(numero);
+                                                        String listaReproduccion = radioA.seleccionarLista(numero);
+                                                        System.out.println(listaReproduccion);
                                                     } catch (Exception e) {
                                                         teclado.nextLine();
                                                         System.out.println("El número ingresado es invalido");
@@ -189,30 +195,6 @@ public class Principal{
                                                     System.out.println("Se cambio el volumen a " + nuevoVolumen);
                                                     break;
                                                 case 5:
-                                                    if (conectividad == false){
-                                                        System.out.println("¿Desea conectar su teléfono? si/no\n");
-                                                        String conexion = teclado.nextLine();
-                                                        if (conexion.equalsIgnoreCase("si")){
-                                                            boolean conexiones = radioA.ConectDesconectTelefono();
-                                                            System.out.println("Se conecto el teléfono");
-                                                        } else if (conexion.equalsIgnoreCase("no")){
-                                                            System.out.println("No se conecto el telefono");
-                                                        } else {
-                                                            System.out.println("Esa opción es inválida");
-                                                        }
-                                                    } else {
-                                                        System.out.println("¿Desea desconectar su telédono? si/no");
-                                                        String conexion = teclado.nextLine();
-                                                        if (conexion.equalsIgnoreCase("si")){
-                                                            System.out.println("Se desconecto el teléfono");
-                                                        } else if (conexion.equalsIgnoreCase("no")){
-                                                            System.out.println("No se desconecto el telefono");
-                                                        } else {
-                                                            System.out.println("Esa opción es inválida");
-                                                        }
-                                                    }
-                                                    break;
-                                                case 6:
                                                     telefonear = false;
                                                     break;
                                             }
@@ -232,7 +214,7 @@ public class Principal{
 
                                             switch (elegir) {
                                                 case 1:
-                                                    System.out.println("");
+                                                    System.out.println("Ingrese el nombre del lugar al que quiere ir:");
                                                     String direccion = teclado.nextLine();
                                                     String viaje = radioA.PlanificarViajes(direccion);
                                                     System.out.println(viaje);
