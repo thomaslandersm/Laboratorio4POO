@@ -369,8 +369,8 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     * @param a
     * @return int
     */
-   public int cambiarVolumen(int a){
-        if(estadoRadio){
+    public int cambiarVolumen(int a){
+        int volumen = radio.getVolumen();
             if(a > 0){
                 volumen += a;
             }
@@ -380,7 +380,6 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
                 }
             }
             return volumen;
-        } else return -1;
     }
 
     

@@ -73,9 +73,16 @@ public class Principal{
                                                         System.out.println(radioA.cargarEmisora());
                                                         break;
                                                     case 4:
-                                                        int a = teclado.nextint();
-                                                        int nuevoVolumen = radioA.cambiarVolumen(a);
-                                                        System.out.println("Se cambio el volumen a " + nuevoVolumen);
+                                                    System.out.println("Ingrese el volumen de la radio: (número)");
+                                                        try {
+                                                            int a = teclado.nextInt();
+                                                            teclado.nextLine();
+                                                            int nuevoVolumen = radioA.cambiarVolumen(a);
+                                                            System.out.println("Se cambio el volumen a " + nuevoVolumen);  
+                                                        } catch (Exception e) {
+                                                            teclado.nextLine();
+                                                            System.out.println("Ha ingresado un volumen inválido, por favor ingrese un número entero");
+                                                        }
                                                         break;
                                                     case 5:
                                                         modos = false;
@@ -107,8 +114,16 @@ public class Principal{
                                                         System.out.println(radioA.cargarEmisora());
                                                         break;
                                                     case 4:
-                                                        int nuevoVolumen = radioA.cambiarVolumen();
-                                                        System.out.println("Se cambio el volumen a " + nuevoVolumen);
+                                                        System.out.println("Ingrese el volumen de la radio: (número)");
+                                                        try {
+                                                            int a = teclado.nextInt();
+                                                            teclado.nextLine();
+                                                            int nuevoVolumen = radioA.cambiarVolumen(a);
+                                                            System.out.println("Se cambio el volumen a " + nuevoVolumen);  
+                                                        } catch (Exception e) {
+                                                            teclado.nextLine();
+                                                            System.out.println("Ha ingresado un volumen inválido, por favor ingrese un número entero");
+                                                        }
                                                         break;
                                                     case 5:
                                                         modos = false;
@@ -156,8 +171,16 @@ public class Principal{
                                                     System.out.println(cambio);
                                                     break;
                                                 case 4:
-                                                    int nuevoVolumen = radioA.cambiarVolumen();
-                                                    System.out.println("Se cambio el volumen a " + nuevoVolumen);
+                                                    System.out.println("Ingrese el volumen de la radio: (número)");
+                                                    try {
+                                                        int a = teclado.nextInt();
+                                                        teclado.nextLine();
+                                                        int nuevoVolumen = radioA.cambiarVolumen(a);
+                                                        System.out.println("Se cambio el volumen a " + nuevoVolumen);  
+                                                    } catch (Exception e) {
+                                                        teclado.nextLine();
+                                                        System.out.println("Ha ingresado un volumen inválido, por favor ingrese un número entero");
+                                                    }
                                                     break;
                                                 case 5:
                                                     modos = false;
@@ -175,7 +198,7 @@ public class Principal{
                                     boolean telefonear = radioA.ConectDesconectTelefono();
                                     if (rpa.equalsIgnoreCase("si"))
                                     while (telefonear) {
-                                        System.out.println("\n1. Mostrar contactos\n2. Llamar contactos\n3. Cambiar salida de audio\n4. Cambiar volukmen\n5. Conectar/Desconectar teléfono\n6. Cambiar modalidad\n");
+                                        System.out.println("\n1. Mostrar contactos\n2. Llamar contactos\n3. Cambiar salida de audio\n4. Cambiar volukmen\n5. Cambiar modalidad\n");
                                         
                                         try {
                                             elegir = teclado.nextInt();
@@ -206,8 +229,16 @@ public class Principal{
                                                     }
                                                     break;
                                                 case 4:
-                                                    int nuevoVolumen = radioA.cambiarVolumen();
-                                                    System.out.println("Se cambio el volumen a " + nuevoVolumen);
+                                                    System.out.println("Ingrese el volumen de la radio: (número)");
+                                                    try {
+                                                        int a = teclado.nextInt();
+                                                        teclado.nextLine();
+                                                        int nuevoVolumen = radioA.cambiarVolumen(a);
+                                                        System.out.println("Se cambio el volumen a " + nuevoVolumen);  
+                                                    } catch (Exception e) {
+                                                        teclado.nextLine();
+                                                        System.out.println("Ha ingresado un volumen inválido, por favor ingrese un número entero");
+                                                    }
                                                     break;
                                                 case 5:
                                                     telefonear = false;
