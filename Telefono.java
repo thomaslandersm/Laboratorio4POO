@@ -6,9 +6,6 @@
  * Laboratorio 4
  */
 
- /**
- * 
- */
 public class Telefono {
     private String[] contactos;
     private String[] numeros;
@@ -17,8 +14,6 @@ public class Telefono {
         contactos = new String[10];
         numeros =new String[10];
     }
-
-
     
     /** 
      * @return String[]
@@ -29,7 +24,7 @@ public class Telefono {
 
     
     /** 
-     * @param contactos
+     * @param contactos contactos to set
      */
     public void setContactos(String[] contactos) {
         this.contactos = contactos;
@@ -45,16 +40,15 @@ public class Telefono {
 
     
     /** 
-     * @param numeros
+     * @param numeros numeros to set
      */
     public void setNumeros(String[] numeros) {
         this.numeros = numeros;
     }
 
-/**
- * 
- */
-
+    /**
+     * Funcion que llena la lista de contactos del teléfono
+     */
     public void llenarContactos(){
         contactos[0] = "Papá luchon";
         numeros[0] = "42589592";

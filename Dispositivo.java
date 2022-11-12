@@ -7,9 +7,7 @@
  */
 import java.util.ArrayList;
 import java.util.Random;
-/**
- * 
- */
+
 public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRadio,ModoReproduccion{
     private Radio radio;
     private Telefono tel;
@@ -18,9 +16,6 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     private ArrayList<Float> emisorasGuardadas;
     private String[] emisorasNombre;
 
-    /**
- * 
- */
     public Dispositivo(){
         radio = new Radio();
         tel = new Telefono();
@@ -41,7 +36,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     
     /** 
-     * @param radio
+     * @param radio radio to set
      */
     public void setRadio(Radio radio) {
         this.radio = radio;
@@ -57,7 +52,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     
     /** 
-     * @param tel
+     * @param tel tel to set
      */
     public void setTel(Telefono tel) {
         this.tel = tel;
@@ -73,7 +68,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     
     /** 
-     * @param temas
+     * @param temas temas to set
      */
     public void setTemas(Musica temas) {
         this.temas = temas;
@@ -89,7 +84,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     
     /** 
-     * @param emisoras
+     * @param emisoras emisoras to set
      */
     public void setEmisoras(float[] emisoras) {
         this.emisoras = emisoras;
@@ -105,7 +100,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     
     /** 
-     * @param emisorasGuardadas
+     * @param emisorasGuardadas emisorasGuardadas to set
      */
     public void setEmisorasGuardadas(ArrayList<Float> emisorasGuardadas) {
         this.emisorasGuardadas = emisorasGuardadas;
@@ -121,16 +116,15 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     
     /** 
-     * @param emisorasNombre
+     * @param emisorasNombre emisorasnombre to set
      */
     public void setEmisorasNombre(String[] emisorasNombre) {
         this.emisorasNombre = emisorasNombre;
     }
 
-/**
- * 
- */
-
+    /**
+     * Funcion que da todas las emisoras de la radio
+     */
     public void llenarDispositivo(){
         emisoras[0] = (float) 87.5;
         emisorasNombre[0] = "Asi Fue Mi Vida";
@@ -287,12 +281,9 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
 
     }
 
-    /**
- * 
- */
-
     /** 
      * @return boolean
+     * Modela la funcion de conectar y desconectar el teléfono
      */
     public boolean ConectDesconectTelefono(){
         return true;
@@ -301,6 +292,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return String
+     * Modela la función que muestra los contactos
      */
     public String MostrarContactos(){
         tel.llenarContactos();
@@ -317,13 +309,10 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return contactos;
     }
 
-    /**
- * 
- */
-
     /** 
      * @param numContacto
      * @return String
+     * Modela la funcion para llamar a un número telefónico
      */
     public String LlamarContactos(String numContacto){
         String llamada = "Se ha llamado a " + numContacto + ". \nLa plática fue larga y divertida.\n" + FinalizarLlamada();
@@ -333,6 +322,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return String
+     * Modela la función que finaliza una llamada
      */
     public String FinalizarLlamada(){
         return "Se ha finalizado la llamada";
@@ -341,6 +331,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return boolean
+     * Modela la función que cambia la salida de audio
      */
     public boolean CambiarSpeaker(){
         return true;
@@ -350,6 +341,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     /** 
      * @param direccion
      * @return String
+     * Modela la funcion que planifica un viaje
      */
     public String PlanificarViajes(String direccion){
         return "Se ha creado una ruta hacia " + direccion;
@@ -358,6 +350,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return boolean
+     * Modela la función que enciendo o apaga el
      */
     public boolean encenderApagar(){
         radio.setEncendido(true);
@@ -368,6 +361,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
    /** 
     * @param a
     * @return int
+    * Modela la función que cambia el volumen del dispositivo
     */
     public int cambiarVolumen(int a){
         int volumen = radio.getVolumen();
@@ -385,6 +379,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return boolean
+     * Modela la función que cambia la banda de frecuencia
      */
     public boolean cambiarFMAM(){
         radio.setBanda("AM");
@@ -394,6 +389,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return float
+     * MOdela la funcion que cambia de emisora
      */
     public float cambiarEmisora(){
         llenarDispositivo();
@@ -429,6 +425,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return String
+     * Modela la función que carga una emisora guardada
      */
     public String cargarEmisora(){
         llenarDispositivo();
@@ -468,6 +465,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     /** 
      * @param num
      * @return String
+     * Modela una función que selecciona una lista de reproducción
      */
     public String seleccionarLista(int num){
         temas.llenarMusica();
@@ -482,6 +480,7 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
     
     /** 
      * @return String
+     * Modela la función que cambia de canción
      */
     public String cambiarCancion(){
         temas.llenarMusica();
@@ -496,12 +495,9 @@ public class Dispositivo implements ModoTelefono,ModoProductividad,RadioA,ModoRa
         return cancionElegida;
     }
 
-    /**
- * 
- */
-
     /** 
      * @return String
+     * Modela la funcion que reproduce una canción
      */
     public String escucharCancion(){
         temas.llenarMusica();

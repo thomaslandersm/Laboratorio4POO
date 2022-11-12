@@ -6,10 +6,6 @@
  * Laboratorio 4
  */
 import java.util.Scanner;
-
-/**
- * 
- */
 public class Principal{
     
     /** 
@@ -20,7 +16,6 @@ public class Principal{
         Scanner teclado = new Scanner(System.in);
         String rpa = "";
         int elegir = 0;
-        boolean conectividad = false;
 
         Dispositivo radioA = new Dispositivo();
         
@@ -220,7 +215,6 @@ public class Principal{
                                                     System.out.println("¿Por donde quiere escuchar el audio? speaker/audifonos");
                                                     rpa = teclado.nextLine();
                                                     if (rpa.equalsIgnoreCase("speaker")){
-                                                        boolean speaAudi = radioA.CambiarSpeaker();
                                                         System.out.println("La salida de audio es el speaker");
                                                     } else if (rpa.equalsIgnoreCase("audifonos")){
                                                         System.out.println("La salida de audio son los audifinos");

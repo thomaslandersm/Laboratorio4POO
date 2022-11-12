@@ -11,10 +11,6 @@ public class Radio {
     private boolean encendido;
     private float emisora;
 
-/**
- * 
- */
-
     public Radio(){
         banda = "FM";
         volumen = 75;
@@ -33,7 +29,7 @@ public class Radio {
 
     
     /** 
-     * @param emisora
+     * @param emisora emisora to set
      */
     public void setEmisora(float emisora) {
         this.emisora = emisora;
@@ -49,7 +45,7 @@ public class Radio {
 
     
     /** 
-     * @param banda
+     * @param banda banda to set
      */
     public void setBanda(String banda) {
         this.banda = banda;
@@ -65,7 +61,7 @@ public class Radio {
 
     
     /** 
-     * @param volumen
+     * @param volumen volumen to set
      */
     public void setVolumen(int volumen) {
         this.volumen = volumen;
@@ -89,7 +85,7 @@ public class Radio {
 
     
     /** 
-     * @param encendido
+     * @param encendido encendido to set
      */
     public void setEncendido(boolean encendido) {
         this.encendido = encendido;

@@ -6,9 +6,6 @@
  * Laboratorio 4
  */
 
- /**
- * 
- */
 public class Musica {
     private String[] canciones;
     private String[] duracion;
@@ -23,10 +20,6 @@ public class Musica {
         generos = new String[20];
         listaReprod = new String[3];
     }
-
-/**
- * 
- */
     
     /** 
      * @return String[]
@@ -37,7 +30,7 @@ public class Musica {
 
     
     /** 
-     * @param canciones
+     * @param canciones canciones to set
      */
     public void setCanciones(String[] canciones) {
         this.canciones = canciones;
@@ -53,7 +46,7 @@ public class Musica {
 
     
     /** 
-     * @param duracion
+     * @param duracion duracion to set
      */
     public void setDuracion(String[] duracion) {
         this.duracion = duracion;
@@ -69,7 +62,7 @@ public class Musica {
 
     
     /** 
-     * @param autores
+     * @param autores autores to set
      */
     public void setAutores(String[] autores) {
         this.autores = autores;
@@ -85,7 +78,7 @@ public class Musica {
 
     
     /** 
-     * @param generos
+     * @param generos generos to set
      */
     public void setGeneros(String[] generos) {
         this.generos = generos;
@@ -101,16 +94,15 @@ public class Musica {
 
     
     /** 
-     * @param listaReprod
+     * @param listaReprod listaReprod to set
      */
     public void setListaReprod(String[] listaReprod) {
         this.listaReprod = listaReprod;
     }
 
-/**
- * 
- */
-
+    /**
+     * Funcion obtiene las canciones a reproducir
+     */
     public void llenarMusica(){
         canciones[0] = "Imagine";
         duracion[0] = "3:53";
